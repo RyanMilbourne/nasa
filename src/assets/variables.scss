@@ -1,0 +1,57 @@
+// basic body
+$main-background-color: rgb(255, 255, 255);
+$main-font-family: "Space Grotesk", sans-serif;
+$main-text-color: rgb(0, 0, 0);
+$main-font-size: 1rem;
+
+// nav settings
+$nav-height: 60px;
+
+// content section settings
+$max-width: 1150px;
+
+// box shadows
+$shadow-v1: 0px 2.3px 2.8px 0px rgba(0, 0, 0, 0.027),
+  0px 4.7px 5.5px 0px rgba(0, 0, 0, 0.035),
+  0px 7.3px 8.3px 0px rgba(0, 0, 0, 0.04),
+  0px 10px 11.2px 0px rgba(0, 0, 0, 0.043),
+  0px 13.1px 14.1px 0px rgba(0, 0, 0, 0.043),
+  0px 16.7px 17.1px 0px rgba(0, 0, 0, 0.043),
+  0px 21.3px 20.3px 0px rgba(0, 0, 0, 0.047),
+  0px 27.2px 23.7px 0px rgba(0, 0, 0, 0.047),
+  0px 35.4px 27.6px 0px rgba(0, 0, 0, 0.047),
+  0px 47.6px 32.3px 0px rgba(0, 0, 0, 0.05),
+  0px 67.7px 38.5px 0px rgba(0, 0, 0, 0.055),
+  0px 107.7px 48.5px 0px rgba(0, 0, 0, 0.06);
+
+$shadow-v2: 0px 2.3px 2.8px 0px rgba(0, 0, 0, 0.027),
+  0px 4.7px 5.5px 0px rgba(0, 0, 0, 0.035),
+  0px 7.3px 8.3px 0px rgba(0, 0, 0, 0.04),
+  0px 10px 11.2px 0px rgba(0, 0, 0, 0.043),
+  0px 13.1px 14.1px 0px rgba(0, 0, 0, 0.043),
+  0px 16.7px 17.1px 0px rgba(0, 0, 0, 0.043);
+
+// animations
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
