@@ -2,22 +2,23 @@ import { useContext } from "react";
 import "./HomepageStyles.scss";
 import { Helmet } from "react-helmet";
 import { MarsContext } from "../../context/marsRoverContext";
+import HeroLanding from "./hero_landing/HeroLanding";
 
 const Homepage = () => {
   const { roverData, loading, error, camera, handleCameraChange } =
     useContext(MarsContext);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  // if (loading) {
+  //   return <p>Loading...</p>;
+  // }
 
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
+  // if (error) {
+  //   return <p>Error: {error}</p>;
+  // }
 
-  if (!roverData || roverData.length === 0) {
-    return <p>No photos available for provided date</p>;
-  }
+  // if (!roverData || roverData.length === 0) {
+  //   return <p>No photos available for provided date</p>;
+  // }
 
   return (
     <>
@@ -26,13 +27,14 @@ const Homepage = () => {
         <meta name="description" content="Homepage Description" />
       </Helmet>
       <div className="homepage-container">
-        {roverData.map((photo) => (
+        <HeroLanding />
+        {/* {roverData.map((photo) => (
           <img
             key={photo.id}
             src={photo.img_src}
             alt={`Mars rover photo from ${photo.earth_date}`}
           />
-        ))}
+        ))} */}
       </div>
     </>
   );
