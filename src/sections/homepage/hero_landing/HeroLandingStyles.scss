@@ -8,5 +8,8 @@
 
 .hero-landing-wrapper {
   width: 100%;
-  background-color: rgb(47, 47, 47);
+  aspect-ratio: 7/5;
+  background-image: url("/rover-landing-background.webp");
+  background-size: cover;
+  border-radius: 2rem;
 }
