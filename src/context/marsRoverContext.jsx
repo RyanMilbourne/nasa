@@ -5,7 +5,7 @@ export const MarsContext = createContext();
 
 export const MarsProvider = ({ children }) => {
   const [rover, setRover] = useState("Curiosity");
-  const [camera, setCamera] = useState("MAST");
+  const [camera, setCamera] = useState("FHAZ");
   const [earthDate, setEarthDate] = useState("2015-12-25"); // YYYY-MM-DD
   const [roverData, setRoverData] = useState(null);
 
@@ -31,9 +31,10 @@ export const MarsProvider = ({ children }) => {
     const fetchRoverData = async () => {
       setLoading(true);
       setError(null);
+
       try {
         const response = await axios.get(
-          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${earthDate}&api_key=${apiKey}`
+          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${earthDate}&camera=${camera}&api_key=${apiKey}`
         );
         setRoverData(response.data.photos);
       } catch (error) {
@@ -45,7 +46,11 @@ export const MarsProvider = ({ children }) => {
     };
 
     if (earthDate) fetchRoverData();
-  }, [rover, earthDate]);
+  }, [rover, camera, earthDate]);
+
+  const handleCameraChange = (e) => {
+    setCamera(e.target.value);
+  };
 
   return (
     <MarsContext.Provider
@@ -56,6 +61,7 @@ export const MarsProvider = ({ children }) => {
         roverData,
         loading,
         error,
+        handleCameraChange,
       }}
     >
       {children}
