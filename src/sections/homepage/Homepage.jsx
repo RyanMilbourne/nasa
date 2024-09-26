@@ -3,6 +3,7 @@ import "./HomepageStyles.scss";
 import { Helmet } from "react-helmet";
 import { MarsContext } from "../../context/marsRoverContext";
 import HeroLanding from "./hero_landing/HeroLanding";
+import Gallery from "./Gallery/Gallery";
 
 const Homepage = () => {
   const { roverData, loading, error, camera, handleCameraChange } =
@@ -28,6 +29,7 @@ const Homepage = () => {
       </Helmet>
       <div className="homepage-container">
         <HeroLanding />
+        <Gallery />
         {/* {roverData.map((photo) => (
           <img
             key={photo.id}
