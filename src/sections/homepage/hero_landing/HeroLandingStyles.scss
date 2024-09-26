@@ -2,14 +2,17 @@
 
 .hero-landing-container {
   width: 100%;
-  padding: 2rem;
+  // padding: 2rem;
   box-sizing: border-box;
+  background-image: url("/landing-haze.webp");
+  background-size: 95%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-landing-wrapper {
   width: 100%;
   aspect-ratio: 7/5;
-  background-image: url("/rover-landing-background.webp");
+  background-image: url("/landing-rover.webp");
   background-size: cover;
-  border-radius: 2rem;
 }
