@@ -9,6 +9,9 @@ export const MarsProvider = ({ children }) => {
   const [earthDate, setEarthDate] = useState("2015-12-25"); // YYYY-MM-DD
   const [roverData, setRoverData] = useState(null);
 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   /* 
   Cameras:
   FHAZ (Front Hazard Avoidance Camera)
@@ -26,13 +29,18 @@ export const MarsProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchRoverData = async () => {
+      setLoading(true);
+      setError(null);
       try {
         const response = await axios.get(
           `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${earthDate}&api_key=${apiKey}`
         );
-        setRoverData(response.photos);
+        setRoverData(response.data.photos);
       } catch (error) {
         console.error("Error Fetching Data: ", error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -46,6 +54,8 @@ export const MarsProvider = ({ children }) => {
         camera,
         earthDate,
         roverData,
+        loading,
+        error,
       }}
     >
       {children}
