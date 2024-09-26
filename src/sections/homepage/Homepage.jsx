@@ -4,7 +4,8 @@ import { Helmet } from "react-helmet";
 import { MarsContext } from "../../context/marsRoverContext";
 
 const Homepage = () => {
-  const { roverData, loading, error } = useContext(MarsContext);
+  const { roverData, loading, error, camera, handleCameraChange } =
+    useContext(MarsContext);
 
   if (loading) {
     return <p>Loading...</p>;
