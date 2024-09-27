@@ -8,6 +8,7 @@
   background-size: 95%;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
 }
 
 .hero-landing-wrapper {
@@ -15,4 +16,19 @@
   aspect-ratio: 7/5;
   background-image: url("/landing-rover.webp");
   background-size: cover;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-landing-graphic {
+  width: 200px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  // background-color: rgb(255, 68, 0);
+  background: linear-gradient(to bottom, $mars, transparent);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
