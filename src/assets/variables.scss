@@ -83,3 +83,12 @@ $shadow-v5: rgba(0, 0, 0, 0) 0px 0px 0px, rgba(0, 0, 0, 0.024) 1.1px 1.1px 1px,
     transform: translateX(0);
   }
 }
+
+@keyframes loading {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
