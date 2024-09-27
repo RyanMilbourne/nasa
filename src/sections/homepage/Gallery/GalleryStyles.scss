@@ -3,11 +3,14 @@
 .gallery-container {
   width: 100%;
   box-sizing: border-box;
+  padding: 20px;
+  background-color: #281f1b;
+  border-radius: 2rem;
 }
 
 .gallery-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 
