@@ -11,7 +11,7 @@ const GalleryFilter = () => {
     handleCameraChange,
     handleColumnChange,
     currentCamera,
-    menu,
+    cameraMenu,
     toggleMenu,
   } = useContext(MarsContext);
 
@@ -34,7 +34,7 @@ const GalleryFilter = () => {
           </div>
         </div>
       </div>
-      {menu && (
+      {cameraMenu && (
         <div className="camera-menu-container">
           <div className="camera-menu-wrapper">
             {cameraData.map((camera, index) => (

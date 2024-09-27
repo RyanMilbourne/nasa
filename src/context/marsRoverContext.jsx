@@ -5,11 +5,11 @@ export const MarsContext = createContext();
 
 export const MarsProvider = ({ children }) => {
   const [rover, setRover] = useState("Curiosity");
-  const [camera, setCamera] = useState("FHAZ");
+  const [camera, setCamera] = useState("NAVCAM");
   const [earthDate, setEarthDate] = useState("2015-12-25"); // YYYY-MM-DD
   const [roverData, setRoverData] = useState(null);
   const [columns, setColumns] = useState(3);
-  const [menu, setMenu] = useState(false);
+  const [cameraMenu, setCameraMenu] = useState(false);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -38,12 +38,12 @@ export const MarsProvider = ({ children }) => {
   }, [rover, camera, earthDate]);
 
   const toggleMenu = () => {
-    setMenu((prev) => !prev);
+    setCameraMenu((prev) => !prev);
   };
 
   const handleCameraChange = (cameraValue) => {
     setCamera(cameraValue);
-    setMenu(false);
+    setCameraMenu(false);
   };
 
   const handleColumnChange = (e) => {
@@ -96,7 +96,7 @@ export const MarsProvider = ({ children }) => {
         error,
         columns,
         currentCamera,
-        menu,
+        cameraMenu,
         handleCameraChange,
         handleColumnChange,
         toggleMenu,
