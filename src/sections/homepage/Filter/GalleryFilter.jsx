@@ -5,8 +5,11 @@ import cameraData from "./cameraData";
 
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 import CameraAltRoundedIcon from "@mui/icons-material/CameraAltRounded";
+import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
+
 import ColumnMenu from "./ColumnMenu";
 import CameraMenu from "./CameraMenu";
+import DateMenu from "./DateMenu";
 
 const GalleryFilter = () => {
   const {
@@ -14,6 +17,8 @@ const GalleryFilter = () => {
     handleColumnChange,
     currentCamera,
     cameraMenu,
+    earthDate,
+    dateMenu,
     toggleCameraMenu,
     columnMenu,
     toggleColumnMenu,
@@ -26,6 +31,12 @@ const GalleryFilter = () => {
   return (
     <div className="filter-container">
       <div className="filter-wrapper">
+        <div className="date-selection-wrapper">
+          <div className="icon-wrapper">
+            <CalendarMonthRoundedIcon style={iconStyle} />
+          </div>
+          <DateMenu />
+        </div>
         <div className="camera-selection-wrapper" onClick={toggleCameraMenu}>
           <div className="icon-wrapper">
             <CameraAltRoundedIcon style={iconStyle} />
@@ -40,6 +51,7 @@ const GalleryFilter = () => {
       </div>
       {columnMenu && <ColumnMenu />}
       {cameraMenu && <CameraMenu />}
+      {/* {dateMenu && <DateMenu />} */}
     </div>
   );
 };

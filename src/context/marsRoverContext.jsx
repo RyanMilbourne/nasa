@@ -6,8 +6,10 @@ export const MarsContext = createContext();
 export const MarsProvider = ({ children }) => {
   const [rover, setRover] = useState("Curiosity");
 
-  const [earthDate, setEarthDate] = useState("2015-12-25"); // YYYY-MM-DD
+  const [earthDate, setEarthDate] = useState("2016-08-23"); // YYYY-MM-DD
   const [roverData, setRoverData] = useState(null);
+
+  const [dateMenu, setDateMenu] = useState(true);
 
   const [columns, setColumns] = useState(3);
   const [columnMenu, setColumnMenu] = useState(false);
@@ -40,6 +42,10 @@ export const MarsProvider = ({ children }) => {
 
     if (earthDate) fetchRoverData();
   }, [rover, camera, earthDate]);
+
+  const handleDateChange = (date) => {
+    setEarthDate(date);
+  };
 
   const toggleCameraMenu = () => {
     setCameraMenu((prev) => !prev);
@@ -107,10 +113,13 @@ export const MarsProvider = ({ children }) => {
         currentCamera,
         cameraMenu,
         columnMenu,
+        earthDate,
+        dateMenu,
         handleCameraChange,
         handleColumnChange,
         toggleCameraMenu,
         toggleColumnMenu,
+        handleDateChange,
       }}
     >
       {children}
