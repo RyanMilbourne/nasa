@@ -32,7 +32,7 @@ const GalleryFilter = () => {
           </div>
           <div className="camera-title">{currentCamera}</div>
         </div>
-        <div className="column-section-wrapper" onClick={toggleColumnMenu}>
+        <div className="column-selection-wrapper" onClick={toggleColumnMenu}>
           <div className="icon-wrapper grid">
             <GridViewRoundedIcon style={iconStyle} />
           </div>
