@@ -9,6 +9,7 @@ $main-font-size: 1rem;
 $mars: #c1440e;
 $mars-light: rgb(255, 106, 0);
 $mars-translucent: rgba(193, 68, 14, 0.5);
+$mars-transparent: rgba(193, 68, 14, 0.25);
 
 // nav settings
 $nav-height: 60px;
@@ -36,6 +37,13 @@ $shadow-v2: 0px 2.3px 2.8px 0px rgba(0, 0, 0, 0.027),
   0px 10px 11.2px 0px rgba(0, 0, 0, 0.043),
   0px 13.1px 14.1px 0px rgba(0, 0, 0, 0.043),
   0px 16.7px 17.1px 0px rgba(0, 0, 0, 0.043);
+
+$shadow-v3: inset -4px 2px 2px -1px $mars-transparent,
+  rgba(28, 22, 19, 0) 0px 0px 0px, rgba(28, 22, 19, 0.024) 1.1px 1.1px 1px,
+  rgba(28, 22, 19, 0.03) 2.2px 2.2px 2.1px,
+  rgba(28, 22, 19, 0.035) 3.4px 3.4px 3.3px,
+  rgba(28, 22, 19, 0.035) 5px 5px 4.6px, rgba(28, 22, 19, 0.035) 7px 7px 6.3px,
+  rgba(28, 22, 19, 0.04) 9.8px 9.8px 8.6px;
 
 // animations
 @keyframes slideDown {
