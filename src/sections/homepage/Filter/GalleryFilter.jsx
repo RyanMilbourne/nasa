@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./GalleryFilterStyles.scss";
 import { MarsContext } from "../../../context/marsRoverContext";
 import cameraData from "./cameraData";
 
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 import CameraAltRoundedIcon from "@mui/icons-material/CameraAltRounded";
+import ColumnMenu from "./ColumnMenu";
+import CameraMenu from "./CameraMenu";
 
 const GalleryFilter = () => {
   const {
@@ -12,7 +14,9 @@ const GalleryFilter = () => {
     handleColumnChange,
     currentCamera,
     cameraMenu,
-    toggleMenu,
+    toggleCameraMenu,
+    columnMenu,
+    toggleColumnMenu,
   } = useContext(MarsContext);
 
   const iconStyle = {
@@ -22,33 +26,20 @@ const GalleryFilter = () => {
   return (
     <div className="filter-container">
       <div className="filter-wrapper">
-        <div className="camera-selection-wrapper" onClick={toggleMenu}>
+        <div className="camera-selection-wrapper" onClick={toggleCameraMenu}>
           <div className="icon-wrapper">
             <CameraAltRoundedIcon style={iconStyle} />
           </div>
           <div className="camera-title">{currentCamera}</div>
         </div>
-        <div className="column-section-wrapper">
+        <div className="column-section-wrapper" onClick={toggleColumnMenu}>
           <div className="icon-wrapper grid">
             <GridViewRoundedIcon style={iconStyle} />
           </div>
         </div>
       </div>
-      {cameraMenu && (
-        <div className="camera-menu-container">
-          <div className="camera-menu-wrapper">
-            {cameraData.map((camera, index) => (
-              <div
-                className="camera-item"
-                key={index}
-                onClick={() => handleCameraChange(camera.value)}
-              >
-                {camera.name}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+      {columnMenu && <ColumnMenu />}
+      {cameraMenu && <CameraMenu />}
     </div>
   );
 };

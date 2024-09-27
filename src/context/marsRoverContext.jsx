@@ -9,6 +9,7 @@ export const MarsProvider = ({ children }) => {
   const [earthDate, setEarthDate] = useState("2015-12-25"); // YYYY-MM-DD
   const [roverData, setRoverData] = useState(null);
   const [columns, setColumns] = useState(3);
+  const [columnMenu, setColumnMenu] = useState(true);
   const [cameraMenu, setCameraMenu] = useState(false);
 
   const [loading, setLoading] = useState(true);
@@ -37,8 +38,12 @@ export const MarsProvider = ({ children }) => {
     if (earthDate) fetchRoverData();
   }, [rover, camera, earthDate]);
 
-  const toggleMenu = () => {
+  const toggleCameraMenu = () => {
     setCameraMenu((prev) => !prev);
+  };
+
+  const toggleColumnMenu = () => {
+    setColumnMenu((prev) => !prev);
   };
 
   const handleCameraChange = (cameraValue) => {
@@ -46,8 +51,8 @@ export const MarsProvider = ({ children }) => {
     setCameraMenu(false);
   };
 
-  const handleColumnChange = (e) => {
-    setColumns(e.target.value);
+  const handleColumnChange = (columnValue) => {
+    setColumns(columnValue);
   };
 
   let currentCamera = "";
@@ -97,9 +102,11 @@ export const MarsProvider = ({ children }) => {
         columns,
         currentCamera,
         cameraMenu,
+        columnMenu,
         handleCameraChange,
         handleColumnChange,
-        toggleMenu,
+        toggleCameraMenu,
+        toggleColumnMenu,
       }}
     >
       {children}
