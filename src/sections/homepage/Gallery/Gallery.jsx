@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./GalleryStyles.scss";
 import GalleryItem from "./GalleryItem";
 import { MarsContext } from "../../../context/marsRoverContext";
+import GalleryFilter from "./GalleryFilter";
 
 const Gallery = () => {
   const { roverData, loading, error, camera, handleCameraChange } =
@@ -20,6 +21,7 @@ const Gallery = () => {
   }
   return (
     <div className="gallery-container">
+      <GalleryFilter />
       <div className="gallery-wrapper">
         {roverData.map((photo) => (
           <GalleryItem
