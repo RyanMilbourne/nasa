@@ -9,7 +9,7 @@ export const MarsProvider = ({ children }) => {
   const [earthDate, setEarthDate] = useState("2015-12-25"); // YYYY-MM-DD
   const [roverData, setRoverData] = useState(null);
   const [columns, setColumns] = useState(3);
-  const [columnMenu, setColumnMenu] = useState(true);
+  const [columnMenu, setColumnMenu] = useState(false);
   const [cameraMenu, setCameraMenu] = useState(false);
 
   const [loading, setLoading] = useState(true);
