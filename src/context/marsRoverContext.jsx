@@ -56,6 +56,7 @@ export const MarsProvider = ({ children }) => {
 
   const handleColumnChange = (columnValue) => {
     setColumns(columnValue);
+    setColumnMenu(false);
   };
 
   let currentCamera = "";
