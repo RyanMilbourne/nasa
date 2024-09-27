@@ -9,18 +9,6 @@ const Homepage = () => {
   const { roverData, loading, error, camera, handleCameraChange } =
     useContext(MarsContext);
 
-  // if (loading) {
-  //   return <p>Loading...</p>;
-  // }
-
-  // if (error) {
-  //   return <p>Error: {error}</p>;
-  // }
-
-  // if (!roverData || roverData.length === 0) {
-  //   return <p>No photos available for provided date</p>;
-  // }
-
   return (
     <>
       <Helmet>
@@ -30,13 +18,6 @@ const Homepage = () => {
       <div className="homepage-container">
         <HeroLanding />
         <Gallery />
-        {/* {roverData.map((photo) => (
-          <img
-            key={photo.id}
-            src={photo.img_src}
-            alt={`Mars rover photo from ${photo.earth_date}`}
-          />
-        ))} */}
       </div>
     </>
   );
