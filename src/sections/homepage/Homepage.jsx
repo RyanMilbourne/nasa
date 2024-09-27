@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { MarsContext } from "../../context/marsRoverContext";
 import HeroLanding from "./hero_landing/HeroLanding";
 import Gallery from "./Gallery/Gallery";
-import GalleryFilter from "./Gallery/GalleryFilter";
+import GalleryFilter from "./Filter/GalleryFilter";
 
 const Homepage = () => {
   const { roverData, loading, error, camera, handleCameraChange } =
@@ -18,7 +18,7 @@ const Homepage = () => {
       </Helmet>
       <div className="homepage-container">
         <HeroLanding />
-        {/* <GalleryFilter /> */}
+        <GalleryFilter />
         <Gallery />
       </div>
     </>

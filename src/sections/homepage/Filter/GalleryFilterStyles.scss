@@ -1,0 +1,77 @@
+@import "@/assets/variables.scss";
+
+.filter-container {
+  padding: 20px 0 0 0;
+  margin-bottom: 1rem;
+  position: relative;
+  font-size: 14px;
+}
+
+.filter-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.camera-selection-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 20px;
+  border-radius: 20px;
+  background-color: $light-brown;
+  box-shadow: $shadow-v2;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.camera-selection-wrapper:hover {
+  transform: translateY(-6px);
+}
+
+.icon-wrapper {
+  background-color: $mars-light;
+  color: $main-background-color;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  box-shadow: $shadow-v4;
+}
+
+.grid {
+  box-shadow: $shadow-v1;
+}
+
+.camera-title {
+  margin-top: -2px;
+}
+
+.camera-menu-container {
+  margin-top: 1rem;
+  background-color: rgba(40, 31, 27, 0.9);
+  backdrop-filter: blur(4px);
+  position: absolute;
+  padding: 40px;
+  border-radius: 2rem;
+  min-width: 400px;
+  box-shadow: $shadow-v5;
+  animation: slideDown 0.5s ease;
+}
+
+.camera-menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.camera-item {
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.camera-item:hover {
+  color: $mars-light;
+}

@@ -8,22 +8,11 @@ export const MarsProvider = ({ children }) => {
   const [camera, setCamera] = useState("FHAZ");
   const [earthDate, setEarthDate] = useState("2015-12-25"); // YYYY-MM-DD
   const [roverData, setRoverData] = useState(null);
+  const [columns, setColumns] = useState(3);
+  const [menu, setMenu] = useState(false);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  /* 
-  Cameras:
-  FHAZ (Front Hazard Avoidance Camera)
-  RHAZ (Rear Hazard Avoidance Camera)
-  MAST (Mast Camera)
-  CHEMCAM (Chemistry and Camera Complex)
-  MAHLI (Mars Hand Lens Imager)
-  MARDI (Mars Descent Imager)
-  NAVCAM (Navigation Camera)
-  PANCAM (Panoramic Camera)
-  MINITES (Miniature Thermal Emission Spectrometer)
-  */
 
   const apiKey = import.meta.env.VITE_NASA_API_KEY;
 
@@ -48,9 +37,53 @@ export const MarsProvider = ({ children }) => {
     if (earthDate) fetchRoverData();
   }, [rover, camera, earthDate]);
 
-  const handleCameraChange = (e) => {
-    setCamera(e.target.value);
+  const toggleMenu = () => {
+    setMenu((prev) => !prev);
   };
+
+  const handleCameraChange = (cameraValue) => {
+    setCamera(cameraValue);
+    setMenu(false);
+  };
+
+  const handleColumnChange = (e) => {
+    setColumns(e.target.value);
+  };
+
+  let currentCamera = "";
+
+  switch (camera) {
+    case "FHAZ":
+      currentCamera = "Front Hazard Avoidance Camera";
+      break;
+    case "RHAZ":
+      currentCamera = "Rear Hazard Avoidance Camera";
+      break;
+    case "MAST":
+      currentCamera = "Mast Camera";
+      break;
+    case "CHEMCAM":
+      currentCamera = "Chemistry and Camera Complex";
+      break;
+    case "MAHLI":
+      currentCamera = "Mars Hand Lens Imager";
+      break;
+    case "MARDI":
+      currentCamera = "Mars Descent Imager";
+      break;
+    case "NAVCAM":
+      currentCamera = "Navigation Camera";
+      break;
+    case "PANCAM":
+      currentCamera = "Panaramic Camera";
+      break;
+    case "MINITES":
+      currentCamera = "Miniature Thermal Emission Spectrometer";
+      break;
+    default:
+      currentCamera = "No Camera";
+      break;
+  }
 
   return (
     <MarsContext.Provider
@@ -61,7 +94,12 @@ export const MarsProvider = ({ children }) => {
         roverData,
         loading,
         error,
+        columns,
+        currentCamera,
+        menu,
         handleCameraChange,
+        handleColumnChange,
+        toggleMenu,
       }}
     >
       {children}
