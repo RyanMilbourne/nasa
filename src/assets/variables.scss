@@ -92,3 +92,15 @@ $shadow-v5: rgba(0, 0, 0, 0) 0px 0px 0px, rgba(0, 0, 0, 0.024) 1.1px 1.1px 1px,
     transform: rotateZ(360deg);
   }
 }
+
+@keyframes idleUpDown {
+  0% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(-6px);
+  }
+}
