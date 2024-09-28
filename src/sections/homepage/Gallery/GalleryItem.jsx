@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PhotoModal from "./PhotoModal";
 
-const GalleryItem = ({ src, alt }) => {
+const GalleryItem = ({ src, alt, earthDate, sol, camera, cameraShort }) => {
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
@@ -15,7 +15,17 @@ const GalleryItem = ({ src, alt }) => {
         alt={alt}
         onClick={toggleModal}
       />
-      {modal && <PhotoModal src={src} toggleModal={toggleModal} />}
+      {modal && (
+        <PhotoModal
+          src={src}
+          alt={alt}
+          earthDate={earthDate}
+          sol={sol}
+          camera={camera}
+          cameraShort={cameraShort}
+          toggleModal={toggleModal}
+        />
+      )}
     </>
   );
 };

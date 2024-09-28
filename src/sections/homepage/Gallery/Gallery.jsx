@@ -26,6 +26,10 @@ const Gallery = () => {
             <GalleryItem
               key={photo.id}
               src={photo.img_src}
+              earthDate={photo.earth_date}
+              sol={photo.sol}
+              camera={photo.camera.full_name}
+              cameraShort={photo.camera.name}
               alt={`Mars rover photo from ${photo.earth_date}`}
             />
           ))}
