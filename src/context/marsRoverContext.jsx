@@ -6,7 +6,7 @@ export const MarsContext = createContext();
 export const MarsProvider = ({ children }) => {
   const [rover, setRover] = useState("Curiosity");
 
-  const [earthDate, setEarthDate] = useState("2016-08-23"); // YYYY-MM-DD
+  const [earthDate, setEarthDate] = useState("2021-03-04"); // YYYY-MM-DD
   const [roverData, setRoverData] = useState(null);
 
   const [dateMenu, setDateMenu] = useState(true);
