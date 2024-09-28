@@ -19,6 +19,7 @@
   position: relative;
   z-index: 2;
   position: relative;
+  animation: roverRise 3s ease-in-out;
 }
 
 .hero-title-wrapper {
@@ -45,6 +46,7 @@
   transform: translate(-50%, -50%);
   filter: blur(4px);
   box-shadow: 0px -20px 100px $mars-translucent;
+  animation: sunRise 3s ease-in-out;
   z-index: 1;
 }
 
@@ -55,4 +57,25 @@
   top: 0;
   z-index: 3;
   background: linear-gradient(360deg, $main-background-color, transparent 30%);
+}
+
+@keyframes sunRise {
+  from {
+    transform: translate(-50%, -0%);
+    filter: blur(16px);
+  }
+  to {
+    filter: blur(4px);
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes roverRise {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }
