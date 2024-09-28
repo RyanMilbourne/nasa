@@ -28,10 +28,40 @@ export const MarsProvider = ({ children }) => {
       setError(null);
 
       try {
-        const response = await axios.get(
-          `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${earthDate}&camera=${camera}&api_key=${apiKey}`
-        );
-        setRoverData(response.data.photos);
+        let allPhotos = [];
+
+        if (camera === null) {
+          const cameraList = [
+            "NAVCAM",
+            "FHAZ",
+            "RHAZ",
+            "MAST",
+            "CHEMCAM",
+            "MAHLI",
+            "MARDI",
+            "PANCAM",
+            "MINITES",
+          ];
+
+          const responses = await Promise.all(
+            cameraList.map((cam) =>
+              axios.get(
+                `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${earthDate}&camera=${cam}&api_key=${apiKey}`
+              )
+            )
+          );
+
+          responses.forEach((response) => {
+            allPhotos = allPhotos.concat(response.data.photos);
+          });
+        } else {
+          const response = await axios.get(
+            `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?earth_date=${earthDate}&camera=${camera}&api_key=${apiKey}`
+          );
+          allPhotos = response.data.photos;
+        }
+
+        setRoverData(allPhotos);
       } catch (error) {
         console.error("Error Fetching Data: ", error);
         setError(error.message);
@@ -56,7 +86,11 @@ export const MarsProvider = ({ children }) => {
   };
 
   const handleCameraChange = (cameraValue) => {
-    setCamera(cameraValue);
+    if (Array.isArray(cameraValue)) {
+      setCamera(null);
+    } else {
+      setCamera(cameraValue);
+    }
     setCameraMenu(false);
   };
 
@@ -96,7 +130,7 @@ export const MarsProvider = ({ children }) => {
       currentCamera = "Miniature Thermal Emission Spectrometer";
       break;
     default:
-      currentCamera = "No Camera";
+      currentCamera = "All Cameras";
       break;
   }
 

@@ -1,5 +1,23 @@
 const cameraData = [
   {
+    name: "All",
+    value: [
+      "NAVCAM",
+      "FHAZ",
+      "RHAZ",
+      "MAST",
+      "CHEMCAM",
+      "MAHLI",
+      "MARDI",
+      "PANCAM",
+      "MINITES",
+    ],
+  },
+  {
+    name: "Navigation Camera",
+    value: "NAVCAM",
+  },
+  {
     name: "Front Hazard Avoidance Camera",
     value: "FHAZ",
   },
@@ -22,10 +40,6 @@ const cameraData = [
   {
     name: "Mars Descent Imager",
     value: "MARDI",
-  },
-  {
-    name: "Navigation Camera",
-    value: "NAVCAM",
   },
   {
     name: "Panoramic Camera",
