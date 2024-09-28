@@ -71,3 +71,14 @@
   text-shadow: $text-shadow-v1;
   animation: logoReveal 2s ease;
 }
+
+@media (min-width: 200px) and (max-width: 768px) {
+  .hero-landing-graphic {
+    width: 150px;
+    animation: sunRiseMobile 2s ease;
+  }
+  .hero-landing-title-container {
+    top: 26%;
+    animation: logoRevealMobile 2s ease;
+  }
+}

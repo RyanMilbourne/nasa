@@ -25,3 +25,9 @@ body {
   margin-top: -4rem;
   padding-bottom: 4rem;
 }
+
+@media (min-width: 200px) and (max-width: 768px) {
+  .content-section {
+    margin-top: 2rem;
+  }
+}
