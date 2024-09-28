@@ -2,7 +2,6 @@
 
 .hero-landing-container {
   width: 100%;
-  // padding: 2rem;
   box-sizing: border-box;
   background-image: url("/landing-haze.webp");
   background-size: 95%;
@@ -19,7 +18,7 @@
   position: relative;
   z-index: 2;
   position: relative;
-  animation: roverRise 3s ease-in-out;
+  animation: roverRise 2s ease-in-out;
 }
 
 .hero-title-wrapper {
@@ -36,7 +35,7 @@
 }
 
 .hero-landing-graphic {
-  width: 200px;
+  width: 250px;
   aspect-ratio: 1/1;
   border-radius: 100%;
   background: linear-gradient(to bottom, $mars-light, $mars, transparent);
@@ -46,7 +45,7 @@
   transform: translate(-50%, -50%);
   filter: blur(4px);
   box-shadow: 0px -20px 100px $mars-translucent;
-  animation: sunRise 3s ease-in-out;
+  animation: sunRise 2s ease-in-out;
   z-index: 1;
 }
 
@@ -61,21 +60,24 @@
 
 @keyframes sunRise {
   from {
-    transform: translate(-50%, -0%);
     filter: blur(16px);
+    width: 200px;
+    transform: translate(-50%, -0%);
   }
   to {
     filter: blur(4px);
-
+    width: 250px;
     transform: translate(-50%, -50%);
   }
 }
 
 @keyframes roverRise {
   from {
+    filter: blur(4px);
     transform: translateY(-20px);
   }
   to {
+    filter: blur(0px);
     transform: translateY(0px);
   }
 }
