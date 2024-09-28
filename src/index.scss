@@ -20,8 +20,8 @@ body {
 }
 
 .content-section {
-  // padding-top: 60px;
   width: 90%;
   max-width: $max-width;
   min-height: calc(100vh - $nav-height - 60px);
+  padding-bottom: 4rem;
 }
