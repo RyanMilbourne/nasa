@@ -59,6 +59,15 @@ $shadow-v5: rgba(0, 0, 0, 0) 0px 0px 0px, rgba(0, 0, 0, 0.024) 1.1px 1.1px 1px,
   rgba(0, 0, 0, 0.04) 22.1px 22.1px 17.7px,
   rgba(0, 0, 0, 0.043) 38.9px 38.9px 29.7px;
 
+// text shadows
+$text-shadow-v1: rgba(0, 0, 0, 0) 0px 0px 0px,
+  rgba(0, 0, 0, 0.04) 0.2px 0.2px 0px, rgba(0, 0, 0, 0.047) 0.4px 0.4px 0.1px,
+  rgba(0, 0, 0, 0.05) 0.8px 0.8px 0.5px, rgba(0, 0, 0, 0.055) 1.6px 1.6px 1.3px,
+  rgba(0, 0, 0, 0.06) 3.1px 3.1px 3px, rgba(0, 0, 0, 0.06) 6px 6px 6.5px,
+  rgba(0, 0, 0, 0.063) 11.8px 11.8px 13.7px,
+  rgba(0, 0, 0, 0.067) 25.8px 25.8px 31.3px,
+  -1px -1px 6px rgba(255, 255, 255, 0.145);
+
 // animations
 @keyframes slideDown {
   from {
@@ -102,5 +111,44 @@ $shadow-v5: rgba(0, 0, 0, 0) 0px 0px 0px, rgba(0, 0, 0, 0.024) 1.1px 1.1px 1px,
   }
   100% {
     transform: translateY(-6px);
+  }
+}
+
+@keyframes sunRise {
+  from {
+    filter: blur(16px);
+    opacity: 0.1;
+    width: 200px;
+    transform: translate(-50%, -0%);
+  }
+  to {
+    filter: blur(4px);
+    opacity: 1;
+    width: 250px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes roverRise {
+  from {
+    filter: blur(4px);
+    transform: translateY(-20px);
+  }
+  to {
+    filter: blur(0px);
+    transform: translateY(0px);
+  }
+}
+
+@keyframes logoReveal {
+  from {
+    filter: blur(6px);
+    opacity: 0;
+    top: 30%;
+  }
+  to {
+    filter: blur(0px);
+    opacity: 1;
+    top: 34%;
   }
 }
