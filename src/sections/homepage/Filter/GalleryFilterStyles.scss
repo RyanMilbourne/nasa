@@ -67,3 +67,9 @@
   transition: all 0.25s ease;
   cursor: pointer;
 }
+
+@media (min-width: 200px) and (max-width: 768px) {
+  .filter-container {
+    display: none;
+  }
+}
