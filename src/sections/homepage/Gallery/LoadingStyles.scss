@@ -20,3 +20,9 @@
   justify-content: center;
   animation: loading 1s ease-in-out infinite;
 }
+
+@media (min-width: 200px) and (max-width: 768px) {
+  .loading-container {
+    margin-top: 0;
+  }
+}
