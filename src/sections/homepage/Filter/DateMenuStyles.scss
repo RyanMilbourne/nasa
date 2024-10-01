@@ -103,3 +103,73 @@
 .react-datepicker__year-text--keyboard-selected {
   background-color: transparent !important;
 }
+
+.react-datepicker__triangle {
+  display: none !important;
+}
+
+@media (min-width: 200px) and (max-width: 768px) {
+  .mobile-date-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+  }
+
+  .react-datepicker-popper {
+    margin-left: 0;
+    position: static !important;
+    transform: translate(0, 0) !important;
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+
+  .datepicker {
+    border-radius: 0;
+  }
+
+  .react-datepicker {
+    width: 100% !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+  }
+
+  .react-datepicker-wrapper {
+    width: 100% !important;
+    text-align: left;
+  }
+
+  .react-datepicker__input-container {
+    width: 100% !important;
+  }
+
+  .react-datepicker__month-container {
+    width: 100% !important;
+    border-radius: 10px !important;
+  }
+
+  .react-datepicker__tab-loop {
+    width: 100% !important;
+  }
+
+  .react-datepicker__tab-loop__start {
+    width: 100% !important;
+  }
+
+  .react-datepicker__day-names,
+  .react-datepicker__week {
+    font-size: 1rem !important;
+    display: flex !important;
+    justify-content: space-between;
+  }
+
+  .react-datepicker__month {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .react-datepicker__triangle {
+    display: none !important;
+  }
+}

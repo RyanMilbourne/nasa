@@ -1,37 +1,37 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState } from "react";
 
 import "./FilterMobileStyles.scss";
 
 import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
 import CameraAltRoundedIcon from "@mui/icons-material/CameraAltRounded";
-import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 
-import ColumnMenu from "./ColumnMenu";
 import CameraMenu from "./CameraMenu";
-import DateMenu from "./DateMenu";
 
 import { MarsContext } from "../../../context/marsRoverContext";
+import DateMenuMobile from "./MobileDateMenu";
 
 const FilterMobile = () => {
-  const {
-    currentCamera,
-    cameraMenu,
-    toggleCameraMenu,
-    columnMenu,
-    toggleColumnMenu,
-  } = useContext(MarsContext);
+  const [viewDateMenu, setViewDateMenu] = useState(false);
 
-  useEffect(() => {
-    console.log("cameraMenu state:", cameraMenu);
-  }, [cameraMenu]);
+  const { currentCamera, cameraMenu, toggleCameraMenu, earthDate } =
+    useContext(MarsContext);
+
+  const toggleDateMenu = () => {
+    setViewDateMenu((prev) => !prev);
+  };
 
   return (
     <div className="mobile-filter-container">
-      <div className="mobile-filter-wrapper">
+      <div className="mobile-filter-wrapper" onClick={toggleDateMenu}>
         <div className="mobile-filter-header">
           <CalendarMonthRoundedIcon />
-          <DateMenu />
+          {earthDate}
         </div>
+        {viewDateMenu && (
+          <div className="mobile-filter-body">
+            <DateMenuMobile toggleDateMenu={toggleDateMenu} />
+          </div>
+        )}
       </div>
       <div className="mobile-filter-wrapper" onClick={toggleCameraMenu}>
         <div className="mobile-filter-header">
@@ -44,10 +44,6 @@ const FilterMobile = () => {
           </div>
         )}
       </div>
-      <div className="mobile-filter-wrapper" onClick={toggleColumnMenu}>
-        <GridViewRoundedIcon />
-      </div>
-      {columnMenu && <ColumnMenu />}
     </div>
   );
 };
