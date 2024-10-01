@@ -34,3 +34,11 @@
 .currentSelection {
   color: $mars-light;
 }
+
+@media (min-width: 200px) and (max-width: 768px) {
+  .column-menu-wrapper {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+}

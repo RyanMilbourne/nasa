@@ -34,3 +34,10 @@
   border-radius: 10px;
   box-sizing: border-box;
 }
+
+.mobile-filter-columns-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
