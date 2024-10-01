@@ -10,6 +10,7 @@
   align-items: flex-start;
   gap: 10px;
   box-sizing: border-box;
+  animation: slideDown 0.5s ease;
 }
 
 .mobile-filter-wrapper {
@@ -40,4 +41,28 @@
   display: flex;
   justify-content: flex-start;
   gap: 10px;
+}
+
+.filter-option-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.filter-icon {
+  background-color: $mars-light;
+  width: 40px;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
 }
