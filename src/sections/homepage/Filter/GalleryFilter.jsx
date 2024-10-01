@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./GalleryFilterStyles.scss";
 import { MarsContext } from "../../../context/marsRoverContext";
-import cameraData from "./cameraData";
 
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 import CameraAltRoundedIcon from "@mui/icons-material/CameraAltRounded";
@@ -13,12 +12,8 @@ import DateMenu from "./DateMenu";
 
 const GalleryFilter = () => {
   const {
-    handleCameraChange,
-    handleColumnChange,
     currentCamera,
     cameraMenu,
-    earthDate,
-    dateMenu,
     toggleCameraMenu,
     columnMenu,
     toggleColumnMenu,
@@ -51,7 +46,6 @@ const GalleryFilter = () => {
       </div>
       {columnMenu && <ColumnMenu />}
       {cameraMenu && <CameraMenu />}
-      {/* {dateMenu && <DateMenu />} */}
     </div>
   );
 };
