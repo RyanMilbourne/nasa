@@ -172,4 +172,14 @@
   .react-datepicker__triangle {
     display: none !important;
   }
+
+  .react-datepicker__day {
+    aspect-ratio: 1/1 io !important;
+    text-align: center !important;
+  }
+
+  .react-datepicker__day-name {
+    aspect-ratio: 1/1 !important;
+    text-align: center !important;
+  }
 }
