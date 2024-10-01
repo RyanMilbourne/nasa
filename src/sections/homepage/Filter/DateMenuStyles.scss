@@ -173,13 +173,21 @@
     display: none !important;
   }
 
-  .react-datepicker__day {
-    aspect-ratio: 1/1 io !important;
-    text-align: center !important;
-  }
-
   .react-datepicker__day-name {
     aspect-ratio: 1/1 !important;
+    width: calc(100% / 7) !important;
     text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .react-datepicker__day {
+    aspect-ratio: 1/1 !important;
+    width: calc(100% / 7) !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 }
