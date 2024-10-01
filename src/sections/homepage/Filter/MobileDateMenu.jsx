@@ -33,8 +33,6 @@ const DateMenuMobile = ({ toggleDateMenu }) => {
         className="datepicker"
         startOpen={true}
         customInput={<HiddenInput />}
-        showMonthDropdown={false}
-        showYearDropdown={false}
       ></DatePicker>
     </div>
   );
