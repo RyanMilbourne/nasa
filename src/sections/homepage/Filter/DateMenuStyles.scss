@@ -1,8 +1,8 @@
 @import "@/assets/variables.scss";
 
 .react-datepicker-popper {
-  bottom: 0;
-  left: 0;
+  bottom: 0 !important;
+  left: 0 !important;
   margin-left: 25px;
 }
 

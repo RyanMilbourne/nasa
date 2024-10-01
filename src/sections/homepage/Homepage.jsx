@@ -1,20 +1,18 @@
-import { useContext } from "react";
 import "./HomepageStyles.scss";
 import { Helmet } from "react-helmet";
-import { MarsContext } from "../../context/marsRoverContext";
 import HeroLanding from "./hero_landing/HeroLanding";
 import Gallery from "./Gallery/Gallery";
 import GalleryFilter from "./Filter/GalleryFilter";
 
 const Homepage = () => {
-  const { roverData, loading, error, camera, handleCameraChange } =
-    useContext(MarsContext);
-
   return (
     <>
       <Helmet>
-        <title>Homepage Title</title>
-        <meta name="description" content="Homepage Description" />
+        <title>🟠 + 🤖 + 📸</title>
+        <meta
+          name="description"
+          content="Photos from Mars, taken by Nasa's Curiosity Rover"
+        />
       </Helmet>
       <div className="homepage-container">
         <HeroLanding />
