@@ -22,6 +22,28 @@ export const MarsProvider = ({ children }) => {
 
   const apiKey = import.meta.env.VITE_NASA_API_KEY;
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (screenWidth < 768) {
+      setColumns(2);
+    } else {
+      setColumns(3);
+    }
+  }, [screenWidth]);
+
   useEffect(() => {
     const fetchRoverData = async () => {
       setLoading(true);
