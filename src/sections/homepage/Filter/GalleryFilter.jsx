@@ -1,51 +1,32 @@
-import React, { useContext, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./GalleryFilterStyles.scss";
-import { MarsContext } from "../../../context/marsRoverContext";
 
-import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
-import CameraAltRoundedIcon from "@mui/icons-material/CameraAltRounded";
-import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
-
-import ColumnMenu from "./ColumnMenu";
-import CameraMenu from "./CameraMenu";
-import DateMenu from "./DateMenu";
+import FilterDesktop from "./FilterDesktop";
+import FilterMobile from "./FilterMobile";
 
 const GalleryFilter = () => {
-  const {
-    currentCamera,
-    cameraMenu,
-    toggleCameraMenu,
-    columnMenu,
-    toggleColumnMenu,
-  } = useContext(MarsContext);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  const iconStyle = {
-    width: "1rem",
-    height: "1rem",
+  const handleResize = () => {
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
   };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="filter-container">
-      <div className="filter-wrapper">
-        <div className="date-selection-wrapper">
-          <div className="icon-wrapper">
-            <CalendarMonthRoundedIcon style={iconStyle} />
-          </div>
-          <DateMenu />
-        </div>
-        <div className="camera-selection-wrapper" onClick={toggleCameraMenu}>
-          <div className="icon-wrapper">
-            <CameraAltRoundedIcon style={iconStyle} />
-          </div>
-          <div className="camera-title">{currentCamera}</div>
-        </div>
-        <div className="column-selection-wrapper" onClick={toggleColumnMenu}>
-          <div className="icon-wrapper grid">
-            <GridViewRoundedIcon style={iconStyle} />
-          </div>
-        </div>
-      </div>
-      {columnMenu && <ColumnMenu />}
-      {cameraMenu && <CameraMenu />}
+      {!isMobile && <FilterDesktop />}
+      {isMobile && <FilterMobile />}
     </div>
   );
 };

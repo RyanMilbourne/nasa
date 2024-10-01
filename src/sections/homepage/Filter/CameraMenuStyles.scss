@@ -22,8 +22,23 @@
 .camera-item {
   cursor: pointer;
   transition: all 0.1s ease;
+  text-align: left;
+  width: 100%;
 }
 
 .camera-item:hover {
   color: $mars-light;
+}
+
+@media (min-width: 200px) and (max-width: 768px) {
+  .camera-menu-container {
+    position: static;
+    min-width: auto;
+    text-align: left;
+    background-color: transparent;
+    padding: 0 0 1rem 0;
+    border-radius: 0;
+    margin-top: 0;
+    box-shadow: none;
+  }
 }

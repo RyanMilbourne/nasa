@@ -5,13 +5,18 @@ import { MarsContext } from "../../../context/marsRoverContext";
 
 const CameraMenu = () => {
   const { handleCameraChange } = useContext(MarsContext);
+
+  const handleMenuClick = (e) => {
+    e.stopPropagation();
+  };
+
   return (
-    <div className="camera-menu-container">
+    <div className="camera-menu-container" onClick={handleMenuClick}>
       <div className="camera-menu-wrapper">
         {cameraData.map((camera, index) => (
           <div
             className="camera-item"
-            key={index}
+            key={`${index} - ${camera}`}
             onClick={() => handleCameraChange(camera.value)}
           >
             {camera.name}

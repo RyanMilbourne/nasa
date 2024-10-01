@@ -1,0 +1,36 @@
+@import "@/assets/variables.scss";
+
+.mobile-filter-container {
+  width: 100%;
+  padding: 20px;
+  background-color: $light-brown;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.mobile-filter-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.mobile-filter-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobile-filter-body {
+  width: 100%;
+  background-color: #2d231f;
+  padding: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
