@@ -26,10 +26,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-110%, -100%);
+  transform: translate(-115%, -70%);
   background-color: rgba(255, 217, 185, 0.025);
-  padding: 20px;
-  border-radius: 20px;
+  padding: 10px 20px;
+  border-radius: 20px 20px 0 20px;
   box-sizing: border-box;
   backdrop-filter: blur(6px);
   box-shadow: $shadow-v3;
@@ -80,5 +80,8 @@
   .hero-landing-title-container {
     top: 26%;
     animation: logoRevealMobile 2s ease;
+  }
+  .hero-title-wrapper {
+    display: none;
   }
 }
