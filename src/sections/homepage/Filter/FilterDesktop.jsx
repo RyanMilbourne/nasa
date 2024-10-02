@@ -38,7 +38,6 @@ const FilterDesktop = () => {
           <div className="icon-wrapper">
             <CalendarMonthRoundedIcon style={iconStyle} />
           </div>
-          {/* <DateMenu /> */}
           {earthDate}
         </div>
         <div className="camera-selection-wrapper" onClick={toggleCameraMenu}>
