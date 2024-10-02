@@ -9,15 +9,23 @@ import CameraMenu from "./CameraMenu";
 import DateMenu from "./DateMenu";
 
 import { MarsContext } from "../../../context/marsRoverContext";
+import { useState } from "react";
 
 const FilterDesktop = () => {
+  const [viewDesktopDateMenu, setViewDesktopDateMenu] = useState(true);
+
   const {
     currentCamera,
     cameraMenu,
     toggleCameraMenu,
     columnMenu,
     toggleColumnMenu,
+    earthDate,
   } = useContext(MarsContext);
+
+  const toggleDesktopDateMenu = () => {
+    setViewDesktopDateMenu((prev) => !prev);
+  };
 
   const iconStyle = {
     width: "1rem",
@@ -26,11 +34,12 @@ const FilterDesktop = () => {
   return (
     <>
       <div className="filter-wrapper">
-        <div className="date-selection-wrapper">
+        <div className="date-selection-wrapper" onClick={toggleDesktopDateMenu}>
           <div className="icon-wrapper">
             <CalendarMonthRoundedIcon style={iconStyle} />
           </div>
-          <DateMenu />
+          {/* <DateMenu /> */}
+          {earthDate}
         </div>
         <div className="camera-selection-wrapper" onClick={toggleCameraMenu}>
           <div className="icon-wrapper">
@@ -46,6 +55,11 @@ const FilterDesktop = () => {
       </div>
       {cameraMenu && <CameraMenu />}
       {columnMenu && <ColumnMenu />}
+      {viewDesktopDateMenu && (
+        <div className="desktop-date-container">
+          <DateMenu />
+        </div>
+      )}
     </>
   );
 };

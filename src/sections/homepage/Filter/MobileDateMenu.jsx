@@ -32,6 +32,10 @@ const DateMenuMobile = ({ toggleDateMenu }) => {
         dateFormat="yyyy-MM-dd"
         className="datepicker"
         startOpen={true}
+        previousMonthButtonLabel="<"
+        previousMonthAriaLabel="<"
+        nextMonthButtonLabel=">"
+        nextMonthAriaLabel=">"
         customInput={<HiddenInput />}
       ></DatePicker>
     </div>

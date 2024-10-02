@@ -64,5 +64,15 @@
   cursor: pointer;
 }
 
+.desktop-date-container {
+  // background-color: salmon;
+  position: absolute;
+  top: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  // width: 100%;
+}
+
 @media (min-width: 200px) and (max-width: 768px) {
 }
