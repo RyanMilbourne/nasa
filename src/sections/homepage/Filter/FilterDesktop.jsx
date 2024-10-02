@@ -12,7 +12,7 @@ import { MarsContext } from "../../../context/marsRoverContext";
 import { useState } from "react";
 
 const FilterDesktop = () => {
-  const [viewDesktopDateMenu, setViewDesktopDateMenu] = useState(true);
+  const [viewDesktopDateMenu, setViewDesktopDateMenu] = useState(false);
 
   const {
     currentCamera,
