@@ -14,15 +14,16 @@ import DateMenuMobile from "./MobileDateMenu";
 import ColumnMenuMobile from "./ColumnMobileMenu";
 
 const FilterMobile = () => {
+  const {
+    currentCamera,
+    cameraMenu,
+    toggleCameraMenu,
+    earthDate,
+    viewMobileDateMenu,
+    toggleMobileDateMenu,
+  } = useContext(MarsContext);
+
   const [viewFilters, setViewFilters] = useState(false);
-  const [viewDateMenu, setViewDateMenu] = useState(false);
-
-  const { currentCamera, cameraMenu, toggleCameraMenu, earthDate } =
-    useContext(MarsContext);
-
-  const toggleDateMenu = () => {
-    setViewDateMenu((prev) => !prev);
-  };
 
   const toggleFilterMenu = () => {
     setViewFilters((prev) => !prev);
@@ -32,6 +33,9 @@ const FilterMobile = () => {
     width: "1.25rem",
     height: "1.25rem",
   };
+
+  // console.log("date menu: ", viewMobileDateMenu);
+  // console.log("camera menu: ", cameraMenu);
 
   return (
     <>
@@ -45,14 +49,14 @@ const FilterMobile = () => {
       </div>
       {viewFilters && (
         <div className="mobile-filter-container">
-          <div className="mobile-filter-wrapper" onClick={toggleDateMenu}>
+          <div className="mobile-filter-wrapper" onClick={toggleMobileDateMenu}>
             <div className="mobile-filter-header">
               <CalendarMonthRoundedIcon style={iconStyle} />
               {earthDate}
             </div>
-            {viewDateMenu && (
+            {viewMobileDateMenu && (
               <div className="mobile-filter-body">
-                <DateMenuMobile toggleDateMenu={toggleDateMenu} />
+                <DateMenuMobile />
               </div>
             )}
           </div>

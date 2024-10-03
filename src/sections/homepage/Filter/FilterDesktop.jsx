@@ -9,11 +9,8 @@ import CameraMenu from "./CameraMenu";
 import DateMenu from "./DateMenu";
 
 import { MarsContext } from "../../../context/marsRoverContext";
-import { useState } from "react";
 
 const FilterDesktop = () => {
-  const [viewDesktopDateMenu, setViewDesktopDateMenu] = useState(false);
-
   const {
     currentCamera,
     cameraMenu,
@@ -21,11 +18,9 @@ const FilterDesktop = () => {
     columnMenu,
     toggleColumnMenu,
     earthDate,
+    viewDesktopDateMenu,
+    toggleDesktopDateMenu,
   } = useContext(MarsContext);
-
-  const toggleDesktopDateMenu = () => {
-    setViewDesktopDateMenu((prev) => !prev);
-  };
 
   const iconStyle = {
     width: "1rem",

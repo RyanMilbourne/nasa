@@ -10,6 +10,8 @@ export const MarsProvider = ({ children }) => {
   const [roverData, setRoverData] = useState(null);
 
   const [dateMenu, setDateMenu] = useState(true);
+  const [viewDesktopDateMenu, setViewDesktopDateMenu] = useState(false);
+  const [viewMobileDateMenu, setViewMobileDateMenu] = useState(false);
 
   const [columns, setColumns] = useState(3);
   const [columnMenu, setColumnMenu] = useState(false);
@@ -95,11 +97,28 @@ export const MarsProvider = ({ children }) => {
     if (earthDate) fetchRoverData();
   }, [rover, camera, earthDate]);
 
+  const toggleDesktopDateMenu = () => {
+    setCameraMenu(false);
+
+    setViewDesktopDateMenu((prev) => !prev);
+  };
+
+  const toggleMobileDateMenu = () => {
+    setCameraMenu(false);
+
+    setViewMobileDateMenu((prev) => !prev);
+  };
+
   const handleDateChange = (date) => {
     setEarthDate(date);
+
+    setViewDesktopDateMenu(false);
   };
 
   const toggleCameraMenu = () => {
+    setViewDesktopDateMenu(false);
+    setViewMobileDateMenu(false);
+
     setCameraMenu((prev) => !prev);
   };
 
@@ -118,6 +137,7 @@ export const MarsProvider = ({ children }) => {
 
   const handleColumnChange = (columnValue) => {
     setColumns(columnValue);
+
     setColumnMenu(false);
   };
 
@@ -171,11 +191,15 @@ export const MarsProvider = ({ children }) => {
         columnMenu,
         earthDate,
         dateMenu,
+        viewDesktopDateMenu,
+        viewMobileDateMenu,
         handleCameraChange,
         handleColumnChange,
         toggleCameraMenu,
         toggleColumnMenu,
         handleDateChange,
+        toggleDesktopDateMenu,
+        toggleMobileDateMenu,
       }}
     >
       {children}

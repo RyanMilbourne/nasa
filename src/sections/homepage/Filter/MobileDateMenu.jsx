@@ -9,7 +9,8 @@ const HiddenInput = React.forwardRef((props, ref) => (
 ));
 
 const DateMenuMobile = ({ toggleDateMenu }) => {
-  const { earthDate, handleDateChange } = useContext(MarsContext);
+  const { earthDate, handleDateChange, toggleMobileDateMenu } =
+    useContext(MarsContext);
 
   const selectedDate = earthDate ? parseISO(earthDate) : null;
 
@@ -37,7 +38,10 @@ const DateMenuMobile = ({ toggleDateMenu }) => {
         nextMonthButtonLabel=">"
         nextMonthAriaLabel=">"
         customInput={<HiddenInput />}
-      ></DatePicker>
+        onClickOutside={() => {
+          toggleMobileDateMenu();
+        }}
+      />
     </div>
   );
 };
