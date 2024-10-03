@@ -26,6 +26,10 @@
   cursor: pointer;
 }
 
+.camera-selection-wrapper:hover {
+  background-color: $light-brown-2;
+}
+
 .icon-wrapper {
   background-color: $mars-light;
   color: $main-background-color;
@@ -62,6 +66,10 @@
   box-shadow: $shadow-v2;
   transition: all 0.25s ease;
   cursor: pointer;
+}
+
+.date-selection-wrapper:hover {
+  background-color: $light-brown-2;
 }
 
 .desktop-date-container {
