@@ -8,7 +8,7 @@ const HiddenInput = React.forwardRef((props, ref) => (
   <input {...props} ref={ref} style={{ display: "none" }} />
 ));
 
-const DateMenuMobile = ({ toggleDateMenu }) => {
+const DateMenuMobile = () => {
   const { earthDate, handleDateChange, toggleMobileDateMenu } =
     useContext(MarsContext);
 
@@ -17,7 +17,7 @@ const DateMenuMobile = ({ toggleDateMenu }) => {
   const onDateChange = (date) => {
     if (date) {
       handleDateChange(format(date, "yyyy-MM-dd"));
-      toggleDateMenu(false);
+      toggleMobileDateMenu(false);
     }
   };
 
