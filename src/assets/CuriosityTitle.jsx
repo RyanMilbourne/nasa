@@ -5,7 +5,6 @@ function CuriosityTitle() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="100%"
-      // height="106.5"
       data-name="Layer_1"
       viewBox="0 0 350.202 106.5"
     >
