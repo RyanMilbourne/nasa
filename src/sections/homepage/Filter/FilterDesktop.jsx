@@ -8,7 +8,7 @@ import ColumnMenu from "./ColumnMenu";
 import CameraMenu from "./CameraMenu";
 import DateMenu from "./DateMenu";
 
-import { MarsContext } from "../../../context/marsRoverContext";
+import { MarsContext } from "@/context/marsRoverContext";
 
 const FilterDesktop = () => {
   const {
