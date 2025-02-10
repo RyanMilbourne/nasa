@@ -1,5 +1,7 @@
 # 🚀 Nasa's Curiosity Rover Images 🤖 🟠
 
+![Curiosity Rover](public/rover-landing-1.webp)
+
 Explore, _out-of-this-world_ (pun intended), photos taken by NASA's Curiosity Rover on Mars!
 
 The Curiosity Rover is equipped with **nine cameras**, each capturing unique perspectives of our neighboring planet.  
