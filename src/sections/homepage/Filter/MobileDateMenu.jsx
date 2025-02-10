@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import DatePicker from "react-datepicker";
 import { format, parseISO } from "date-fns";
 import "./DateMenuStyles.scss";
-import { MarsContext } from "../../../context/marsRoverContext";
+import { MarsContext } from "@/context/marsRoverContext";
 
 const HiddenInput = React.forwardRef((props, ref) => (
   <input {...props} ref={ref} style={{ display: "none" }} />
